@@ -1,6 +1,6 @@
-// Login.jsx
-
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './Login.css'; 
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -16,25 +16,28 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add logic to handle login (e.g., sending login request to server)
+  
     console.log('Email:', email);
     console.log('Password:', password);
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input type="email" value={email} onChange={handleEmailChange} />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input type="password" value={password} onChange={handlePasswordChange} />
-        </div>
-        <button type="submit">Login</button>
-      </form>
+    <div className="login-wrapper">
+      <div className="login-border">
+        <h2 className="login-title">Login</h2>
+        <form className="login-form" onSubmit={handleSubmit}>
+          <div>
+            <label>Email:</label>
+            <input type="email" value={email} onChange={handleEmailChange} />
+          </div>
+          <div>
+            <label>Senha:</label>
+            <input type="password" value={password} onChange={handlePasswordChange} />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <p className="create-account-link">Não tem uma conta? <Link to="/register">Crie uma conta</Link>.</p>
+      </div>
     </div>
   );
 };

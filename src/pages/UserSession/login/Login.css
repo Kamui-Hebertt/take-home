@@ -1,0 +1,65 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background-color: #000; Cor de fundo preta */
+}
+
+.login-border {
+  border: 2px solid #fff; /* Bordas brancas */
+  border-radius: 10px;
+  background-color: #222; /* Cor de fundo mais escura */
+  padding: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaço entre os elementos aumentado */
+}
+
+.login-form label {
+  font-weight: bold; /* Deixa o texto em negrito */
+  color: #fff; /* Texto branco */
+}
+
+.login-form input {
+  padding: 12px; /* Padding aumentado */
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Bordas arredondadas */
+  background-color: #333; /* Cor de fundo escura para inputs */
+  color: #fff; /* Texto branco */
+}
+
+.login-form button {
+  padding: 12px;
+  background-color: #007bff; /* Cor de fundo azul vibrante */
+  color: #fff;
+  border: none;
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #0056b3; /* Cor de fundo azul mais escura */
+}
+
+.create-account-link {
+  margin-top: 16px;
+  text-align: center;
+  color: #fff;
+}
+
+.create-account-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.create-account-link a:hover {
+  text-decoration: underline;
+}
+
+.login-title {
+  color: #fff;
+}
