@@ -63,7 +63,7 @@ const RegisterForm = () => {
       <ToastMsg />
       <div className="register-wrapper">
         <div className="register-border">
-          <h2>Register</h2>
+          <h2 className="title">Registrar</h2>
           <form className="register-form" onSubmit={handleSubmit}>
             <div>
               <label>Nome:</label>
@@ -78,7 +78,7 @@ const RegisterForm = () => {
               <input type="password" name="password" value={formData.password} onChange={handleChange} required />
             </div>
             <div>
-              <label>Confirmar Senha:</label>
+              <label>Confirmar senha:</label>
               <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} required />
             </div>
             <button type="submit">Criar uma conta</button>
