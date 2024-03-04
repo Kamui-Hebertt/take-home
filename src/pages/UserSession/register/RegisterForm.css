@@ -3,48 +3,64 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* background-color: #000; Cor de fundo preta */
+
 }
 
 .register-border {
-  border: 2px solid #fff; /* Bordas brancas */
+  border: 2px solid #fff; 
   border-radius: 10px;
-  background-color: #222; /* Cor de fundo mais escura */
+  background-color: #222;
   padding: 20px;
+  width: 20rem;
 }
 
 .register-form {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Espaço entre os elementos aumentado */
+  gap: 20px; 
 }
 
 .register-form label {
-  font-weight: bold; /* Deixa o texto em negrito */
-  color: #fff; /* Texto branco */
+  font-weight: bold; 
+  color: #fff; 
 }
 
 .register-form input {
-  padding: 12px; /* Padding aumentado */
+  padding: 12px; 
   border: 1px solid #ccc;
-  border-radius: 5px; /* Bordas arredondadas */
-  background-color: #333; /* Cor de fundo escura para inputs */
-  color: #fff; /* Texto branco */
+  border-radius: 5px;
+  background-color: #333; 
+  color: #fff;
+  display: flex;
+  flex-direction:row;
+  width: 17.9rem;
+  
+}
+
+.input-group:first-child {
+  width: 18rem;
+}
+.input-group {
+  width: 26rem;
 }
 
 .register-form button {
   padding: 12px;
-  background-color: #007bff; /* Cor de fundo azul vibrante */
+  background-color: #007bff; 
   color: #fff;
   border: none;
-  border-radius: 5px; /* Bordas arredondadas */
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .register-form button:hover {
-  background-color: #0056b3; /* Cor de fundo azul mais escura */
+  background-color: #0056b3; 
 }
 
 .register-form .error-message {
-  color: #dc3545; /* Cor vermelha para mensagem de erro */
+  color: #dc3545;
+}
+
+.title {
+  color: #fff
 }

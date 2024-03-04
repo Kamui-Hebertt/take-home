@@ -36,7 +36,7 @@ const RegisterForm = () => {
       const { confirmPassword, ...postData } = formData
       console.log("dsads", postData);
       console.log(confirmPassword)
-      const response = await axios.post('http://localhost:3000/api/auth/register', postData);
+      const response = await axios.post('https://takehome-sequelize.onrender.com/api/auth/register', postData);
 
       toast.success('Conta registrada com sucesso!');
 
@@ -60,32 +60,32 @@ const RegisterForm = () => {
 
   return (
     <>
-      <ToastMsg />
-      <div className="register-wrapper">
-        <div className="register-border">
-          <h2 className="title">Registrar</h2>
-          <form className="register-form" onSubmit={handleSubmit}>
-            <div>
-              <label>Nome:</label>
-              <input type="text" name="username" value={formData.username} onChange={handleChange} required />
-            </div>
-            <div>
-              <label>Email:</label>
-              <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-            </div>
-            <div>
-              <label>Senha:</label>
-              <input type="password" name="password" value={formData.password} onChange={handleChange} required />
-            </div>
-            <div>
-              <label>Confirmar senha:</label>
-              <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} required />
-            </div>
-            <button type="submit">Criar uma conta</button>
-          </form>
+  <ToastMsg />
+  <div className="register-wrapper">
+    <div className="register-border">
+      <h2 className="title">Registrar</h2>
+      <form className="register-form" onSubmit={handleSubmit}>
+        <div className="input-group">
+          <label>Nome:</label>
+          <input type="text" name="username" value={formData.username} onChange={handleChange} required />
         </div>
-      </div>
-    </>
+        <div className="input-group">
+          <label>Email:</label>
+          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+        </div>
+        <div className="input-group">
+          <label>Senha:</label>
+          <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+        </div>
+        <div className="input-group">
+          <label>Confirmar senha:</label>
+          <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} required />
+        </div>
+        <button type="submit">Criar uma conta</button>
+      </form>
+    </div>
+  </div>
+</>
   );
 };
 

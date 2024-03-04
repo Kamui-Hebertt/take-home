@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ToastMsg from '../../../src/components/ToastMsg';
 import './ProductsComponent.css';
+import NavBar from '../../components/NavBar';
 
 const ProductsComponent = () => {
   const [products, setProducts] = useState([]);
@@ -38,7 +39,7 @@ const ProductsComponent = () => {
         const token = localStorage.getItem('token');
 
         const authRes = await axios.post(
-          'http://localhost:3000/api/auth/checkAuth',
+          'https://takehome-sequelize.onrender.com/api/auth/checkAuth',
           {},
           {
             headers: {
@@ -48,7 +49,7 @@ const ProductsComponent = () => {
         );
         console.log(authRes.data);
 
-        const productsResponse = await axios.get('http://localhost:3000/api/products', {
+        const productsResponse = await axios.get('https://takehome-sequelize.onrender.com/api/products', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -84,7 +85,7 @@ const ProductsComponent = () => {
         throw new Error('Price must be a valid number');
 
       }
-      const response = await axios.post('http://localhost:3000/api/products', newProduct, {
+      const response = await axios.post('https://takehome-sequelize.onrender.com/api/products', newProduct, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -105,7 +106,7 @@ const ProductsComponent = () => {
        
         throw new Error('Price must be a valid number');
       }
-      await axios.put(`http://localhost:3000/api/products/${editingProductId}`, editedProduct, {
+      await axios.put(`https://takehome-sequelize.onrender.com/api/products/${editingProductId}`, editedProduct, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -126,7 +127,7 @@ const ProductsComponent = () => {
   const confirmDeleteProduct = async () => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:3000/api/products/${deleteProductId}`, {
+      await axios.delete(`https://takehome-sequelize.onrender.com/api/products/${deleteProductId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -144,6 +145,7 @@ const ProductsComponent = () => {
 
   return (
     <> <ToastMsg />
+    <NavBar />
     <div className="products-container">
       <h2>Produtos</h2>
       <input type="text" placeholder="Pesquisar por nome" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />

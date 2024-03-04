@@ -30,7 +30,7 @@ const Login = () => {
     
 
 
-      const response = await axios.post('http://localhost:3000/api/auth/login', {
+      const response = await axios.post('https://takehome-sequelize.onrender.com/api/auth/login', {
         email: email,
         password: password
       });
@@ -49,7 +49,7 @@ const Login = () => {
         toast.error('Erro: ' + error.response.data.error);
         console.error('Error registering user:', error.response.data.error);
       } else {
-        toast.error('Erro ao registrar usuário');
+        toast.error('Erro ao fazer login');
  
         console.error('Erro ', error);
       }
